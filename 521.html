@@ -63,18 +63,14 @@ html {
 
 body {
 	color: #fff;
+	text-align: center;
 	font-family: Roboto, helvetica neue, arial, sans-serif;
-	color: #fff;
 	background-repeat: no-repeat;
-	background: #08c;
+	background-attachment: fixed;
 	background-image: -webkit-linear-gradient(top, #08c, #00a19c 36%, #00548b 83%, #005678);
 	background-image: -moz-linear-gradient(top, #08c, #00a19c 36%, #00548b 83%, #005678);
 	background-image: -o-linear-gradient(top, #08c, #00a19c 36%, #00548b 83%, #005678);
 	background-image: linear-gradient(to bottom, #08c, #00a19c 36%, #00548b 83%, #005678);
-
-	overflow: hidden;
-	text-align: center;
-	height: 100%;
 }
 #wrapper {
 	margin: 100px auto;
@@ -82,14 +78,12 @@ body {
 	max-width: 600px;
 	position: absolute;
 	top: 50%;
-	margin-top: -200px;
+	margin-top: -300px;
 	left: 50%;
 	margin-left: -274px;
 	z-index: 9;
-
 }
-#wrapper p, #wrapper span, #wrapper h1 {
-}
+/* #wrapper p, #wrapper span, #wrapper h1 {} */
 #wrapper h1 {
 	font-size: 30px;
 	margin: 0; padding: 0;
@@ -122,7 +116,6 @@ body {
 	border: 10px solid #fff;
 	zoom: .75;
 	-moz-transform: scale(.75);
-
 }
 #compass span {
 	color: #8bc347;
@@ -149,67 +142,89 @@ body {
 	-ms-transition: all .8s ease-out;
 }
 #wrapper .status-link {
-    padding: 20px 0 0 0;
+	padding: 20px 0 0 0;
 }
 #wrapper .status-link a {
-    position: relative;
-    margin: 0 auto;
-    display: block;
-    width: 150px;
-    padding: 7px 5px 8px 5px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 17px;
-    font-weight: bold;
-    color: #39414D;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+	position: relative;
+	margin: 0 auto;
+	display: block;
+	width: 150px;
+	padding: 7px 5px 8px 5px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 17px;
+	font-weight: bold;
+	color: #39414D;
+	background-color: #ffffff;
+	border-radius: 2px;
+	transition: all 0.3s ease;
 }
 #wrapper .status-link a:hover {
-    color: #0C87F2;
-    text-decoration: none;
+	color: #0C87F2;
+	text-decoration: none;
 }
 #wrapper .status-link a:focus {
-    outline: none;
+	outline: none;
 }
 #wrapper .status-link a:focus:not(:active)::after {
-    content: "";
-    display: block;
-    width: calc(100% + 6px);
-    height: calc(100% + 6px);
-    position: absolute;
-    top: -3px;
-    left:  -3px;
-    border: 1px solid #0C87F2;
-    border-radius: 2px;
+	content: "";
+	display: block;
+	width: calc(100% + 6px);
+	height: calc(100% + 6px);
+	position: absolute;
+	top: -3px;
+	left:  -3px;
+	border: 1px solid #0C87F2;
+	border-radius: 2px;
 }
 #wrapper .status-link a:active {
-    background-color: #B8C0CC;
+	background-color: #B8C0CC;
 }
-</style>
+/* styles for cloudflare inject html */
+.cf-error-details h1 {
+	margin: 10px 0;
+	color: #03e6e3;
+}
+.cferror_details {
+	list-style: none;
+	padding-left: 0;
+}
 
+</style>
 </head>
+
 <body>
 
 <div id="offset"></div>
 <div id="wrapper">
-	<article>
-		<h1 class="fadein">Service temporary unavailable.</h1>
-		<h2 class="fadein">Error code:<br>::CLOUDFLARE_ERROR_500S_BOX::</h2>
-	</article>
+	<h1 class="fadein">Service temporary unavailable.</h1>
+
+	::CLOUDFLARE_ERROR_500S_BOX::
+	<!-- upper token will be replaces with next html:
+	<div class="cf-error-details cf-error-522">
+		<h1>Connection timed out</h1>
+		<p data-translate="connection_timed_out" style="opacity: 1; margin-top: 0px;">The initial connection between Cloudflare's network and the origin web server timed out. As a result, the web page can not be displayed.</p>
+		<ul class="cferror_details" style="">
+			<li>Ray ID: 000000000000000</li>
+			<li>Your IP address: 195.245.221.223</li>
+			<li>Error reference number: 522</li>
+			<li>Cloudflare Location: POP: undef</li>
+		</ul>
+	</div>
+	-->
 
 	<div id="fourohfour">
 		<div id="compass"></div>
 	</div>
+
 	<p class="fadein">The server is down for maintenance. CEX.IO will be operating in full<br>as soon as possible. We apologize for any inconvenience.</p>
 	<p class="fadein">
-		<a id="refresh" href="javascript:void(0)">Refresh the page</a> or <a href="https://support.cex.io/hc/en-us">report the problem</a> to our support team.
+		<a id="refresh" href="">Refresh the page</a> or <a href="https://support.cex.io/hc/en-us">report the problem</a> to our support team.
 	</p>
 
-    <div class="status-link">
-        <a href="https://cexio.statuspage.io/" target="_blank" title="Subscribe to real-time updates on CEX.IO and be aware of platform performance.">CEX.IO Status</a>
-    </div>
+	<div class="status-link">
+		<a href="https://cexio.statuspage.io/" target="_blank" title="Subscribe to real-time updates on CEX.IO and be aware of platform performance.">CEX.IO Status</a>
+	</div>
 </div>
 
 <div id="bg" class="bg">
@@ -218,11 +233,9 @@ body {
 
 <script type='text/javascript'>
 document.addEventListener("DOMContentLoaded", function() {
-	// hide wrapper after 1 sec
+	// show wrapper after 1 sec
   setTimeout(function () {
 		var p = document.querySelectorAll('#wrapper p');
-		console.log(p);
-
 		if (p && p.length > 0) {
 			p.forEach(function(el) {
 				el.style.opacity = '1';
@@ -230,11 +243,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			})
 		}
 	}, 1000);
-
-	// add reload on click
-	document.getElementById('refresh').addEventListener('click', function(e) {
-		location.reload();
-	});
 });
 </script>
 
