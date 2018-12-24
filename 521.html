@@ -181,11 +181,11 @@ body {
 	background-color: #B8C0CC;
 }
 /* styles for cloudflare inject html */
-.cf-error-details h1 {
+#wrapper .cf-error-details h1 {
 	margin: 10px 0;
 	color: #03e6e3;
 }
-.cferror_details {
+#wrapper .cferror_details {
 	list-style: none;
 	padding-left: 0;
 }
@@ -200,6 +200,7 @@ body {
 	<h1 class="fadein">Service temporary unavailable.</h1>
 
 	::CLOUDFLARE_ERROR_500S_BOX::
+
 	<!-- upper token will be replaces with next html:
 	<div class="cf-error-details cf-error-522">
 		<h1>Connection timed out</h1>
@@ -235,7 +236,7 @@ body {
 document.addEventListener("DOMContentLoaded", function() {
 	// show wrapper after 1 sec
   setTimeout(function () {
-		var p = document.querySelectorAll('#wrapper p');
+		var p = document.querySelectorAll('#wrapper p.fadein');
 		if (p && p.length > 0) {
 			p.forEach(function(el) {
 				el.style.opacity = '1';
